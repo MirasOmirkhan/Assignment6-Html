@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6 - Task 1: Selector Detective</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div id="controls">
+        <h3>Task 1: Selector Detective (Cases 1 - 20)</h3>
+        <div class="buttons-grid">
+            <button class="case-btn" data-case="1">Case 1</button>
+            <button class="case-btn" data-case="2">Case 2</button>
+            <button class="case-btn" data-case="3">Case 3</button>
+            <button class="case-btn" data-case="4">Case 4</button>
+            <button class="case-btn" data-case="5">Case 5</button>
+            <button class="case-btn" data-case="6">Case 6</button>
+            <button class="case-btn" data-case="7">Case 7</button>
+            <button class="case-btn" data-case="8">Case 8</button>
+            <button class="case-btn" data-case="9">Case 9</button>
+            <button class="case-btn" data-case="10">Case 10</button>
+            <button class="case-btn" data-case="11">Case 11</button>
+            <button class="case-btn" data-case="12">Case 12</button>
+            <button class="case-btn" data-case="13">Case 13</button>
+            <button class="case-btn" data-case="14">Case 14</button>
+            <button class="case-btn" data-case="15">Case 15</button>
+            <button class="case-btn" data-case="16">Case 16</button>
+            <button class="case-btn" data-case="17">Case 17</button>
+            <button class="case-btn" data-case="18">Case 18</button>
+            <button class="case-btn" data-case="19">Case 19</button>
+            <button class="case-btn highlight-thief" data-case="20">Case 20 (Thief)</button>
+        </div>
+        <div id="case-result-info"></div>
+    </div>
+
+    <div class="house-outer-wrapper">
+        <div class="chimney">
+            <div class="chimney-top"></div>
+        </div>
+
+        <div class="roof-container">
+            <div class="roof-triangle"></div>
+            <div class="roof-window"></div>
+            <div class="party-sign">The Party, 19:30 - 22:30</div>
+        </div>
+
+        <div id="house-container"></div>
+
+        <div class="house-legend">
+            <div class="legend-item"><span class="dot red"></span><span class="dot blue"></span><span class="dot green"></span><span class="dot dark"></span><span class="dot purple"></span><span class="dot orange"></span> Clothing color</div>
+            <div class="legend-item">📱 Phone</div>
+            <div class="legend-item">👓 Glasses</div>
+            <div class="legend-item">👜 Bag</div>
+            <div class="legend-item">🥤 Cup</div>
+            <div class="legend-item">🍰 Cake crumbs</div>
+            <div class="legend-item">⏱ Arrival time</div>
+            <div class="legend-item"><span class="legend-badge">🎓</span> AITU student</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

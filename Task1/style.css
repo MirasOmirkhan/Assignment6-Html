@@ -1,0 +1,366 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #eef2f5;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#controls {
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1120px;
+}
+
+#controls h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    gap: 6px;
+}
+
+button {
+    background-color: #f8f9fa;
+    border: 1px solid #ccd1d9;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #e2e6ea;
+}
+
+.highlight-thief {
+    background-color: #e74c3c;
+    color: white;
+    border-color: #c0392b;
+}
+
+.highlight-thief:hover {
+    background-color: #c0392b;
+}
+
+#case-result-info {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #27ae60;
+    font-size: 13px;
+    min-height: 18px;
+}
+
+
+.house-outer-wrapper {
+    width: 1120px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.chimney {
+    position: absolute;
+    right: 135px;
+    top: 28px;
+    width: 44px;
+    height: 70px;
+    background: #b25332;
+    border: 3px solid #4a2e18;
+    border-radius: 4px;
+    z-index: 1;
+    background-image: 
+        linear-gradient(rgba(74, 46, 24, 0.2) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(74, 46, 24, 0.2) 2px, transparent 2px);
+    background-size: 100% 14px, 22px 100%;
+}
+
+.chimney-top {
+    position: absolute;
+    top: -6px;
+    left: -5px;
+    right: -5px;
+    height: 10px;
+    background: #903c1f;
+    border: 3px solid #4a2e18;
+    border-radius: 3px;
+}
+
+.roof-container {
+    position: relative;
+    height: 120px;
+    width: 100%;
+    z-index: 2;
+}
+
+.roof-triangle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: #7c4827;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: 2;
+}
+
+.roof-window {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 22px;
+    background: #fdfaf6;
+    border: 3px solid #4a2e18;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.party-sign {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    border: 3px solid #2c3e50;
+    padding: 5px 35px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #2c3e50;
+    z-index: 4;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+#house-container {
+    background: #7c4827;
+    border: 4px solid #4a2e18;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    z-index: 3;
+    position: relative;
+}
+
+.floor {
+    display: flex;
+    background: #fdfaf6;
+    border-bottom: 6px solid #4a2e18;
+    min-height: 240px;
+}
+
+.floor:last-child {
+    border-bottom: none;
+}
+
+.floor-label {
+    width: 45px;
+    background: #d8c2a3;
+    border-right: 3px solid #4a2e18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: bold;
+    font-size: 14px;
+    color: #4a2e18;
+    letter-spacing: 2px;
+}
+
+.floor-rooms {
+    display: flex;
+    flex: 1;
+}
+
+.room {
+    flex: 1;
+    padding: 12px;
+    border-right: 3px solid #4a2e18;
+    position: relative;
+    background-image: linear-gradient(to top, rgba(160, 120, 90, 0.35) 12px, transparent 12px);
+}
+
+.room:last-child {
+    border-right: none;
+}
+
+.room h3 {
+    font-size: 15px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.room[data-room="Balcony"] {
+    background-color: #e2eff7;
+    background-image: linear-gradient(to top, rgba(160, 120, 90, 0.35) 12px, transparent 12px);
+}
+
+.room[data-room="Kitchen"] {
+    background-color: #f7f3eb;
+    background-image: linear-gradient(to top, rgba(160, 120, 90, 0.35) 12px, transparent 12px);
+}
+
+.room[data-room="Hall"] {
+    background-color: #faf6f0;
+    background-image: 
+        linear-gradient(90deg, rgba(220, 205, 185, 0.3) 0px, rgba(220, 205, 185, 0.3) 12px, transparent 12px, transparent 24px),
+        linear-gradient(to top, rgba(160, 120, 90, 0.35) 12px, transparent 12px);
+}
+
+.room[data-room="Living room"] {
+    background-color: #f7f3eb;
+    background-image: linear-gradient(to top, rgba(160, 120, 90, 0.35) 12px, transparent 12px);
+}
+
+
+.guests-list {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.guest-card {
+    width: 62px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: #ffffff;
+    padding: 4px 2px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.avatar-wrapper {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    position: relative;
+    background: #f9f9f9;
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.aitu-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #2563eb;
+    font-size: 9px;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.guest-name {
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 2px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.guest-time {
+    font-size: 8px;
+    color: #64748b;
+}
+
+.guest-icons {
+    font-size: 9px;
+    margin-top: 2px;
+    min-height: 12px;
+    display: flex;
+    gap: 1px;
+}
+
+
+.blue-ring .avatar-wrapper { border-color: #3b82f6; }
+.yellow-ring .avatar-wrapper { border-color: #eab308; }
+.purple-ring .avatar-wrapper { border-color: #a855f7; }
+.orange-ring .avatar-wrapper { border-color: #f97316; }
+.red-ring .avatar-wrapper { border-color: #ef4444; }
+.green-ring .avatar-wrapper { border-color: #22c55e; }
+
+.highlighted {
+    outline: 3px solid #eab308;
+    box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+}
+
+.house-legend {
+    margin-top: 10px;
+    background: #fcf9f2;
+    border: 3px solid #4a2e18;
+    border-radius: 6px;
+    padding: 8px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    font-size: 11px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.red { background: #ef4444; } 
+.dot.blue { background: #3b82f6; } 
+.dot.green { background: #22c55e; } 
+.dot.dark { background: #1e293b; } 
+.dot.purple { background: #a855f7; } 
+.dot.orange { background: #f97316; }
+
+.legend-badge {
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    font-size: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
